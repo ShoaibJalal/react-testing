@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Output from "./Output";
 
 const Greeting = () => {
   const [changeParagraph, setChangeParagraph] = useState(false);
@@ -9,8 +10,8 @@ const Greeting = () => {
   return (
     <div>
       <h2>Greetings Testers</h2>
-      {!changeParagraph && <p>Welcome to Unit Testing</p>}
-      {changeParagraph && <p>Your Paragraph Text has Changed.</p>}
+      {!changeParagraph && <Output>Welcome to Unit Testing</Output>}
+      {changeParagraph && <Output>Your Paragraph Text has Changed.</Output>}
       <button onClick={changeParagraphHandler}>Change Paragraph</button>
     </div>
   );
