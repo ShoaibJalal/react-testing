@@ -4,6 +4,11 @@ import Async from "./Async";
 describe("Async Component", () => {
   test("renders posts if fetch request is successful", async () => {
     //Arrang
+    // mocking
+    window.fetch = jest.fn();
+    window.fetch.mockResolvedValueOnce({
+      json: async () => [{ id: "post1", title: "first post" }],
+    });
     render(<Async />);
 
     //Act
